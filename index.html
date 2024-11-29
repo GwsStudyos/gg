@@ -1,0 +1,536 @@
+cale=1.0">
+<title>Elite Kickboxing Academy - Transforme Seu Corpo e Sua Mente</title>
+
+<style>
+/* Definindo variáveis globais */
+:root {
+    --primary-color: #ff3c3c;
+    --secondary-color: #2c2c2c;
+    --accent-color: #ffd700;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes checkmark {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Header e Navigation */
+.header {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed') center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    padding: 0 20px;
+}
+
+.header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.header p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: #ff5555;
+    transform: scale(1.05);
+}
+
+/* Seções */
+.section {
+    padding: 100px 20px;
+}
+
+.beneficios {
+    position: relative;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+    padding: 80px 0;
+}
+
+.beneficios:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.beneficio-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.beneficio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.check-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: checkmark 0.5s ease-out;
+}
+
+.beneficio-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.beneficio-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.beneficio-card:hover .beneficio-icon {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+/* Depoimentos */
+.depoimentos {
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1615117972428-28de87fd6a93') center/cover fixed;
+    color: var(--text-light);
+    padding: 80px 20px;
+}
+
+.depoimentos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--accent-color);
+}
+
+.depoimentos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.depoimento-card {
+    background: rgba(255,255,255,0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-10px);
+}
+
+.depoimento-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 3px solid var(--accent-color);
+}
+
+.estrelas {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.garantia {
+    text-align: center;
+    background: linear-gradient(135deg, #ffd700, #ffa500);
+    color: var(--text-dark);
+    padding: 80px 20px;
+}
+
+.garantia-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.garantia h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.garantia-selo {
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+    animation: pulse 2s infinite;
+}
+
+.preco {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+}
+
+.preco-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+}
+
+.preco-card h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.preco-destaque {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.preco-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.5rem;
+}
+
+.preco-economia {
+    background: var(--accent-color);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.resultados {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    color: white;
+    padding: 100px 0;
+}
+
+.resultados-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.resultados h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--accent-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header p {
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Elite Kickboxing Academy</h1>
+    <p>Transforme seu corpo, fortaleça sua mente e descubra seu verdadeiro potencial</p>
+    <a href="https://go.hotmart.com/V96526073P?ap=5e71" class="cta-button">COMEÇAR AGORA - OFERTA ESPECIAL</a>
+</header>
+
+<section class="section beneficios">
+    <div class="beneficios-grid">
+        <div class="beneficio-card">
+            <div class="check-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <i class="fas fa-dumbbell beneficio-icon"></i>
+            <h3>Condicionamento Físico Elite</h3>
+            <p>• Queima até 1000 calorias por aula<br>
+               • Programa personalizado de treinamento<br>
+               • Resultados visíveis em 30 dias<br>
+               • Acompanhamento de evolução física</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="check-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <i class="fas fa-medal beneficio-icon"></i>
+            <h3>Técnicas Profissionais</h3>
+            <p>• Metodologia exclusiva patenteada<br>
+               • Instrutores certificados internacionalmente<br>
+               • Sistema progressivo de graduação<br>
+               • Técnicas utilizadas por campeões mundiais</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="check-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <i class="fas fa-shield-alt beneficio-icon"></i>
+            <h3>Autodefesa Comprovada</h3>
+            <p>• Técnicas testadas em situações reais<br>
+               • Desenvolvimento de reflexos rápidos<br>
+               • Aumento da consciência situacional<br>
+               • Protocolos de defesa pessoal modernos</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="check-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <i class="fas fa-users beneficio-icon"></i>
+            <h3>Comunidade Elite</h3>
+            <p>• Grupo exclusivo de suporte<br>
+               • Eventos e workshops mensais<br>
+               • Networking com atletas profissionais<br>
+               • Desafios e competições internas</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="check-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <i class="fas fa-brain beneficio-icon"></i>
+            <h3>Desenvolvimento Mental</h3>
+            <p>• Aumento da concentração e foco<br>
+               • Redução do estresse e ansiedade<br>
+               • Fortalecimento da disciplina mental<br>
+               • Desenvolvimento de resiliência psicológica</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="check-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <i class="fas fa-trophy beneficio-icon"></i>
+            <h3>Resultados Garantidos</h3>
+            <p>• Sistema comprovado de evolução<br>
+               • Acompanhamento de métricas pessoais<br>
+               • Plano nutricional personalizado<br>
+               • Suporte VIP para dúvidas 24/7</p>
+        </div>
+    </div>
+</section>
+
+<section class="section depoimentos">
+    <h2>Transformações Reais de Nossos Alunos</h2>
+    <div class="depoimentos-container">
+        <div class="depoimento-card">
+            <div class="depoimento-foto" style="background: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80') center/cover;"></div>
+            <div class="estrelas">★★★★★</div>
+            <p>"Comecei sem nenhuma experiência em lutas. Após 3 meses, perdi 15kg, ganhei músculo e aprendi a me defender. O kickboxing mudou minha vida completamente!"</p>
+            <h4>Maria Silva, 32 anos</h4>
+            <p>Aluna há 6 meses</p>
+        </div>
+        <div class="depoimento-card">
+            <div class="depoimento-foto" style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e') center/cover;"></div>
+            <div class="estrelas">★★★★★</div>
+            <p>"Como policial, precisava melhorar meu condicionamento físico e defesa pessoal. Este programa superou todas as minhas expectativas. Recomendo 100%!"</p>
+            <h4>João Santos, 28 anos</h4>
+            <p>Aluno há 1 ano</p>
+        </div>
+        <div class="depoimento-card">
+            <div class="depoimento-foto" style="background: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2') center/cover;"></div>
+            <div class="estrelas">★★★★★</div>
+            <p>"Nunca me senti tão forte e confiante! As aulas são desafiadoras e divertidas. Os instrutores são excepcionais e a comunidade é incrível!"</p>
+            <h4>Ana Oliveira, 27 anos</h4>
+            <p>Aluna há 8 meses</p>
+        </div>
+    </div>
+</section>
+
+<section class="section garantia">
+    <div class="garantia-container">
+        <svg class="garantia-selo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#2c2c2c"/>
+            <text x="50" y="45" text-anchor="middle" fill="#ffd700" font-size="14">GARANTIA</text>
+            <text x="50" y="65" text-anchor="middle" fill="#ffd700" font-size="14">30 DIAS</text>
+        </svg>
+        <h2>Garantia Incondicional de 7 Dias</h2>
+        <p>Experimente o programa completo por 7 dias. Se você não ficar absolutamente satisfeito com seus resultados, devolvemos 100% do seu dinheiro. Sem burocracia, sem questionamentos.</p>
+        <p><strong>Você não tem nada a perder e um novo corpo e mente para ganhar!</strong></p>
+    </div>
+</section>
+
+<section class="section resultados">
+    <div class="resultados-container">
+        <h2>Resultados Comprovados em Números</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Alunos Transformados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Taxa de Satisfação</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Dias de Garantia</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15kg</div>
+                <div class="stat-label">Média de Perda de Peso</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section preco">
+    <div class="preco-card">
+        <h2>Oferta Especial por Tempo Limitado</h2>
+        <p class="preco-original">De R$ 497,00</p>
+        <p class="preco-economia">Economia de R$ 400,00!</p>
+        <div class="preco-destaque">
+            <p>R$ 97,00 à vista</p>
+            <p>ou 10x de R$ 11,31</p>
+        </div>
+        <p>Últimas vagas com este valor!</p>
+        <a href="https://go.hotmart.com/V96526073P?ap=5e71" class="cta-button">GARANTIR MINHA VAGA AGORA! ➔</a>
+        <p style="margin-top: 20px; font-size: 0.9rem;">🔒 Pagamento 100% seguro | Comece imediatamente</p>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeIn 1s forwards';
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+document.querySelectorAll('.beneficio-card, .depoimento-card').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
